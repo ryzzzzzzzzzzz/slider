@@ -25,16 +25,62 @@
 
 .content {
     text-align: left;
-    color: black;
+    color: #242424;
 }
 
-.content h1 {
-    margin: 190px 4em 70px;
-    font-size: 4em;
+.blocks {
+    margin-left: 65px;
+    margin-top: 185px;
+    position: relative;
+}
+
+.blocks h1 {
+    margin: 0;
+    font-size: 200%;
+    font-weight: 350;
     text-transform: uppercase;
-    font-weight: 400;
 }
 
-.content h2 {
-    letter-spacing: 0.02em
+.blocks h2 {
+    letter-spacing: 0.06em;
+    font-size: 700%;
+    font-weight: 200;
+    word-break: break-all;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+}
+
+.blocks .btn {
+    display: flex;
+    background-color: #ff6a9f;
+    color: #242424;
+    align-items: center;
+    border-radius: 50px;
+    width: 280px;
+    height: 80px;
+    position: absolute;
+    left: 560px;
+    bottom: 6px;
+}
+
+.blocks .btn span {
+    font-size: 24px;
+    font-weight: 450;
+    margin-bottom: 0.3em;
+}
+
+.blocks .btn .arrow {
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+    margin-right: 0.5em;
+    border-style: solid;
+    border-color: #242424;
+    border-radius: 50%;
+    background-color: #242424;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 1;
 }
