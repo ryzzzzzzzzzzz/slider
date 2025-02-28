@@ -16,11 +16,12 @@
 
 .slide {
     flex: 0 0 100%;
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
     display: flex;
     height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .content {
@@ -29,8 +30,8 @@
 }
 
 .blocks {
-    margin-left: 65px;
-    margin-top: 185px;
+    margin-left: 60px;
+    margin-top: 135px;
     position: relative;
 }
 
@@ -42,7 +43,7 @@
 }
 
 .blocks h2 {
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     font-size: 700%;
     font-weight: 200;
     word-break: break-all;
@@ -60,7 +61,7 @@
     width: 280px;
     height: 80px;
     position: absolute;
-    left: 560px;
+    left: 540px;
     bottom: 6px;
 }
 
@@ -83,4 +84,68 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, 1);
     position: relative;
     z-index: 1;
+}
+
+/*===================================================================================================*/
+
+.largeBlock .text {
+    font-size: 22px;
+    border: 2px solid white;
+    border-radius: 50px;
+    background: white;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    padding: 30px 60px;
+    margin-left: 50px;
+    /*overflow: hidden;*/
+    position: relative;
+    z-index: 1;
+}
+
+.largeBlock .text {
+    font-size: 22px;
+    border: 1px solid white;
+    border-radius: 50px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 60px;
+    margin-left: 50px;
+    overflow: hidden;
+}
+
+.largeBlock {
+    direction: rtl;
+    width: 830px;
+    height: 450px;
+    overflow: auto;
+    position: relative;
+    margin-top: 50px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    z-index: 4;
+}
+
+.largeBlock::-webkit-scrollbar,
+.largeBlock::-webkit-scrollbar-thumb,
+.largeBlock::-webkit-scrollbar-track {
+    width: 20px;
+    border: none;
+    background: transparent;
+}
+
+.largeBlock::-webkit-scrollbar-button,
+.largeBlock::-webkit-scrollbar-track-piece,
+.largeBlock::-webkit-scrollbar-corner {
+    display: none;
+}
+
+.largeBlock::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #ff6a9f;
+}
+
+.largeBlock::-webkit-scrollbar-track {
+    background-image: url('../../data/img/track.png');
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-position: center;
 }
