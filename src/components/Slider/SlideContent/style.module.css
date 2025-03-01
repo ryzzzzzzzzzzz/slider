@@ -1,160 +1,188 @@
-.content {
-    text-align: left;
-    color: #242424;
-
-}
-
-.blocks {
-    margin-left: 60px;
-    margin-top: 135px;
+.first, .second, .third {
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
 
-.blocks h1 {
+h1, h2 {
     margin: 0;
-    font-size: 200%;
-    font-weight: 350;
+    padding: 0;
     text-transform: uppercase;
+    width: 50%;
+    position: relative;
+    z-index: 3;
 }
 
-.blocks h2 {
-    letter-spacing: 0.01em;
-    font-size: 700%;
-    font-weight: 350;
-    word-break: break-all;
-    text-transform: uppercase;
-    line-height: 1;
-    margin: 0;
+h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 10rem;
+    white-space: nowrap;
+    margin-left: 0.3rem;
 }
 
-.blocks .btn {
+h2 {
+    font-size: 7rem;
+    font-weight: 200;
+    line-height: 1.1;
+    letter-spacing: 0.08em;
+    margin-top: -1rem;
+}
+
+.btn {
     display: flex;
     background-color: #ff6a9f;
     color: #242424;
     align-items: center;
-    border-radius: 50px;
-    width: 280px;
-    height: 80px;
-    position: absolute;
-    left: 540px;
-    bottom: 6px;
+    border-radius: 5rem;
+    padding: 0.6rem;
+    z-index: 1;
 }
 
-.blocks .btn span {
-    font-size: 24px;
-    font-weight: 450;
-    margin-bottom: 0.3em;
+.btn:active,
+.btn:focus {
+    border: none;
+    outline: none;
 }
 
-.blocks .btn .arrow {
+.btn span {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0 1rem 0.3rem 0;
+}
+
+.btn .arrow {
     color: white;
-    width: 50px;
-    height: 50px;
-    font-size: 2em;
-    margin-right: 0.5em;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 2rem;
+    margin-right: 0.3em;
     border-style: solid;
     border-color: #242424;
     border-radius: 50%;
     background-color: #242424;
     box-shadow: 0 0 8px rgba(0, 0, 0, 1);
-    position: relative;
-    z-index: 1;
+    /*! тень поменять на градиент*/
 }
 
-/*===================================================================================================*/
-
-.largeBlock .text {
-    font-size: 22px;
-    border: 2px solid white;
-    border-radius: 50px;
-    background: white;
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-    padding: 30px 60px;
-    margin-left: 50px;
-    /*overflow: hidden;*/
-    position: relative;
-    z-index: 1;
+.first {
+    .btn {
+        align-self: flex-end;
+        margin-right: 4.6rem;
+        margin-top: -6rem;
+    }
 }
 
-.largeBlock .text {
-    font-size: 22px;
-    border: 1px solid white;
-    border-radius: 50px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 30px 60px;
-    margin-left: 50px;
-    overflow: hidden;
+.second {
+
+    .large {
+        direction: rtl;
+        overflow: auto;
+        margin-top: 2rem;
+        width: 86.5vw;
+        height: 60vh;
+        z-index: 1;
+    }
+
+    .frame {
+        height: 60%;
+        width: 92%;
+        margin: 6rem 4rem;
+        border: 1px solid white;
+        border-radius: 5rem;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 8rem;
+        z-index: 0;
+    }
+
+    .text {
+        direction: ltr;
+        font-size: 1.4rem;
+        padding: 1rem 8rem;
+        margin-left: 2.4rem;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .large::-webkit-scrollbar,
+    .large::-webkit-scrollbar-thumb,
+    .large::-webkit-scrollbar-track {
+        width: 20px;
+        border: none;
+        background: transparent;
+    }
+
+    .large::-webkit-scrollbar-button,
+    .large::-webkit-scrollbar-track-piece,
+    .large::-webkit-scrollbar-corner {
+        display: none;
+    }
+
+    .large::-webkit-scrollbar-thumb {
+        border-radius: 2rem;
+        background-image: url('../../../data/img/thumb.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+    }
+
+    .large::-webkit-scrollbar-track {
+        background-image: url('../../../data/img/track.png');
+        background-repeat: repeat-y;
+        background-size: contain;
+        background-position: center;
+    }
 }
 
-.largeBlock {
-    direction: rtl;
-    width: 830px;
-    height: 450px;
-    overflow: auto;
-    position: relative;
-    margin-top: 50px;
-    border: 1px solid transparent;
-    border-radius: 50px;
-    z-index: 4;
-}
+.third {
+    flex-direction: row;
 
-.largeBlock::-webkit-scrollbar,
-.largeBlock::-webkit-scrollbar-thumb,
-.largeBlock::-webkit-scrollbar-track {
-    width: 20px;
-    border: none;
-    background: transparent;
-}
+    .bottle {
+        height: 90vh;
+        align-self: flex-end;
+        margin-right: 4rem;
+        z-index: 2;
+    }
 
-.largeBlock::-webkit-scrollbar-button,
-.largeBlock::-webkit-scrollbar-track-piece,
-.largeBlock::-webkit-scrollbar-corner {
-    display: none;
-}
+    .small {
+        font-size: 1.6rem;
+        display: flex;
+        column-gap: 3rem;
+        margin-top: 3rem;
+        align-items: flex-start;
+        margin-left: -9.5rem;
+    }
 
-.largeBlock::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    background: #ff6a9f;
-}
+    .small p {
+        border: 1px solid white;
+        border-radius: 2rem;
+        background-color: white;
+        padding: 2.5rem 3rem;
+        display: block;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
 
-.largeBlock::-webkit-scrollbar-track {
-    background-image: url('../../../data/img/track.png');
-    background-repeat: repeat-y;
-    background-size: contain;
-    background-position: center;
-}
+    .small p:first-child {
+        padding-left: 10rem;
+        padding-bottom: 3rem;
+        width: 16rem;
+    }
 
-/*===================================================================================================*/
+    .btn {
+        align-self: flex-end;
+        margin-left: -18rem;
+        margin-bottom: 2rem;
+    }
 
-.bottleSlide {
-    display: flex;
-}
-
-.bottleText {
-    display: flex;
-    flex-direction: column;
-    margin-left: 75px;
-}
-
-.bottle {
-    height: 768px;
-    position: relative;
-    bottom: 155px;
-}
-
-.smallBlocks {
-    display: flex;
-    justify-content: space-around;
-    width: 600px;
-}
-
-.smallBlocks p {
-    font-size: 24px;
-    width: 230px;
-    border: 1px solid #fff;
-    border-radius: 30px;
-    background-color: white;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
+    .icon {
+        width: 5rem;
+        height: 4.5rem;
+        position: absolute;
+        top: -2.5rem;
+    }
 }

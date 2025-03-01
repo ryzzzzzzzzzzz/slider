@@ -1,7 +1,7 @@
 import s from "./style.module.css"
 import {useEffect, useRef, useState} from "react";
 import usePreventScroll from "../../hooks/usePreventScroll.js"
-import SlidesData from "../../data/SlidesData.jsx"
+import {SlidesData} from "../../data/SlidesData.jsx"
 import SlideItem from "./SlideItem/SlideItem.jsx";
 
 const Slider = () => {
@@ -13,17 +13,6 @@ const Slider = () => {
     const preventScroll = usePreventScroll();
 
     const slides = SlidesData()
-
-    const changeSlide = (newSlide) => {
-        setIsChangingSlide(true);
-        setTimeout(() => {
-            const newIndex = (currentSlide + newSlide + slides.length) % slides.length;
-            if (newIndex >= 0 && newIndex < slides.length) {
-                setCurrentSlide(newIndex);
-            }
-            setIsChangingSlide(false);
-        }, 200);
-    };
 
     useEffect(() => {
         const handleScroll = (e) => {
@@ -37,6 +26,23 @@ const Slider = () => {
             document.body.removeEventListener('mousemove', handleScroll);
         };
     }, []);
+
+    useEffect(() => {
+        if (slideRef.current) {
+            slideRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    }, [currentSlide]);
+
+    const changeSlide = (newSlide) => {
+        setIsChangingSlide(true);
+        setTimeout(() => {
+            const newIndex = (currentSlide + newSlide + slides.length) % slides.length;
+            if (newIndex >= 0 && newIndex < slides.length) {
+                setCurrentSlide(newIndex);
+            }
+            setIsChangingSlide(false);
+        }, 200);
+    };
 
     const handleMouseDown = (e) => {
         setTouchStartX(e.clientX);
@@ -82,11 +88,9 @@ const Slider = () => {
         setIsDragging(false);
     };
 
-    useEffect(() => {
-        if (slideRef.current) {
-            slideRef.current.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-    }, [currentSlide]);
+    const goToSecondSlide = () => {
+        setCurrentSlide(1)
+    }
 
     return (
         <div className={s.slider}>
@@ -101,7 +105,7 @@ const Slider = () => {
                 onTouchEnd={handleTouchEnd}
             >
                 {slides.map((slide, index) => (
-                    <SlideItem slide={slide} key={index}/>
+                    <SlideItem slide={slide} index={index} goToSecondSlide={goToSecondSlide} key={index}/>
                 ))}
             </div>
         </div>

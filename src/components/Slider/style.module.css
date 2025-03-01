@@ -3,10 +3,11 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     touch-action: manipulation;
     -ms-touch-action: manipulation;
-    display: flex;
-    overflow-x: auto;
     scroll-snap-type: x mandatory;
     contain: size layout style;
 }
@@ -17,5 +18,4 @@
     height: 100%;
     transition: transform 0.3s ease-out;
     scroll-snap-align: center;
-    margin: 0;
 }

@@ -2,14 +2,16 @@ import bg1 from './img/bg1.png';
 import bg2 from './img/bg2.png';
 import bg3 from './img/bg3.png';
 import bottle from "./img/bottle.png";
+import icon1 from './img/icon1.png';
+import icon2 from './img/icon2.png';
 
-const slidesData = () => {
+export const SlidesData = () => {
     return [
         {
             bg: bg1,
             heading: 'Привет,',
             block: (<span>Это <b>не</b><br/>коммерческое<br/>задание</span>),
-            btn: 'Что дальше?'
+            btn: (<span>Что дальше?</span>)
         },
         {
             bg: bg2,
@@ -27,10 +29,12 @@ const slidesData = () => {
             bottle: bottle,
             heading: 'Ключевое сообщение',
             block: (<span>Brend<b>XY</b></span>),
-            smallBlock1: 'Enicula ipsum a arcu cursus vitae. Eu non diam phasellus vestibulum lorem sed risus ultricies',
-            smallBlock2: (<span>A arcu <br/> cursus vitae</span>)
+            smallBlock1: (<span>Enicula ipsum a arcu cursus vitae. Eu non diam phasellus vestibulum lorem sed risus ultricies</span>),
+            smallBlock2: (<span>A arcu <br/> cursus vitae</span>),
+            btn: (<span>Подробнее</span>),
+            icon1: icon1,
+            icon2: icon2,
+            modal: (<span>Преимущества</span>)
         },
     ]
 }
-
-export default slidesData;
