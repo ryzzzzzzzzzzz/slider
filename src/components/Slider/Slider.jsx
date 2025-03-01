@@ -2,7 +2,7 @@ import s from "./style.module.css"
 import {useEffect, useRef, useState} from "react";
 import usePreventScroll from "../../hooks/usePreventScroll.js"
 import SlidesData from "../../data/SlidesData.jsx"
-import SlideItem from "./SlideItem.jsx";
+import SlideItem from "./SlideItem/SlideItem.jsx";
 
 const Slider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);

@@ -1,0 +1,14 @@
+.slide {
+    flex: 0 0 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 100%;
+}
+
+.slide:last-child {
+    margin-right: 0;
+}

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import SlideContent from "./SlideContent.jsx";
+import SlideContent from "../SlideContent/SlideContent.jsx";
 import s from "./style.module.css"
 
 const SlideItem = ({ slide }) => {
