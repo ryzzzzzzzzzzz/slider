@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    height: 100%;
 }
 
 h1, h2 {
@@ -56,8 +57,8 @@ h2 {
     color: white;
     width: 3.2rem;
     height: 3.2rem;
+    margin-right: 1rem;
     font-size: 2rem;
-    margin-right: 0.3em;
     border-style: solid;
     border-color: #242424;
     border-radius: 50%;
@@ -185,4 +186,102 @@ h2 {
         position: absolute;
         top: -2.5rem;
     }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 200vw;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.modal {
+    outline: 1px solid white;
+    border-radius: 2rem;
+    background-color: white;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mslider {
+    display: flex;
+    flex-direction: column;
+    width: 78vw;
+    margin-left: -10rem;
+    margin-top: -10rem;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 5rem;
+    font-weight: 200;
+    position: relative;
+    z-index: 3;
+    align-self: end;
+    width: 4rem;
+    margin-top: -2rem;
+}
+
+.left, .right {
+    position: relative;
+    z-index: 3;
+    counter-reset: list-counter;
+    list-style-type: none;
+    font-size: 1.5rem;
+    padding: 0;
+    margin-top: 5rem;
+    margin-left: 11rem;
+    margin-right: 3rem;
+    width: 29rem;
+}
+
+.left {
+    counter-reset: list-counter;
+}
+
+.right {
+    counter-reset: list-counter 3;
+}
+
+.left li, .right li {
+    counter-increment: list-counter;
+    margin-bottom: 0.5rem;
+}
+
+.left li::before, .right li::before {
+    content: "0" counter(list-counter);
+    color: #8cc9e8;
+    font-weight: bold;
+    display: block;
+    width: 30rem;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    margin-left: 10rem;
+}
+
+.dot {
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #242424;
+    border-radius: 50%;
+    margin: 1rem 0.5rem 0.5rem;
+    /*1rem 0 0.5rem*/
+}
+
+.dot.active {
+    background: #fc6da9;
+    border: 2px solid #fc6da9;
+}
+
+.marrow {
+    cursor: pointer;
+    font-size: 2rem;
+    margin: 0 1rem;
 }
