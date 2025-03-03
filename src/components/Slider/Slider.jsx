@@ -3,9 +3,9 @@ import {useEffect, useRef, useState} from "react";
 import usePreventScroll from "../../hooks/usePreventScroll.js"
 import {SlidesData} from "../../data/SlidesData.jsx"
 import SlideItem from "./SlideItem/SlideItem.jsx";
+import PropTypes from "prop-types";
 
-const Slider = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
+const Slider = ({currentSlide, changeSlide}) => {
     const slideRef = useRef(null);
     const [touchStartX, setTouchStartX] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
@@ -33,12 +33,12 @@ const Slider = () => {
         }
     }, [currentSlide]);
 
-    const changeSlide = (newSlide) => {
+    const switchSlide = (newSlide) => {
         setIsChangingSlide(true);
         setTimeout(() => {
             const newIndex = (currentSlide + newSlide + slides.length) % slides.length;
             if (newIndex >= 0 && newIndex < slides.length) {
-                setCurrentSlide(newIndex);
+                changeSlide(newIndex);
             }
             setIsChangingSlide(false);
         }, 200);
@@ -56,7 +56,7 @@ const Slider = () => {
 
         if (!isChangingSlide && Math.abs(diffX) > 100) {
             const direction = diffX > 0 ? -1 : 1;
-            changeSlide(direction);
+            switchSlide(direction);
             setTouchStartX(currentX);
         }
     };
@@ -78,7 +78,7 @@ const Slider = () => {
 
         if (!isChangingSlide && Math.abs(diffX) > 100) {
             const direction = diffX > 0 ? -1 : 1;
-            changeSlide(direction);
+            switchSlide(direction);
             setTouchStartX(currentX);
         }
     };
@@ -87,10 +87,6 @@ const Slider = () => {
         preventScroll.current = false;
         setIsDragging(false);
     };
-
-    const goToSecondSlide = () => {
-        setCurrentSlide(1)
-    }
 
     return (
         <div className={s.slider}>
@@ -105,11 +101,16 @@ const Slider = () => {
                 onTouchEnd={handleTouchEnd}
             >
                 {slides.map((slide, index) => (
-                    <SlideItem slide={slide} index={index} goToSecondSlide={goToSecondSlide} key={index}/>
+                    <SlideItem slide={slide} index={index} currentSlide={currentSlide} changeSlide={changeSlide} key={index}/>
                 ))}
             </div>
         </div>
     );
 };
+
+Slider.propTypes = {
+    currentSlide: PropTypes.number.isRequired,
+    changeSlide: PropTypes.func.isRequired
+}
 
 export default Slider;

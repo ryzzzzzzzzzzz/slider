@@ -1,0 +1,15 @@
+.header {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 1.2rem;
+    left: 4rem;
+    z-index: 3;
+    letter-spacing: 0.2rem;
+}
+
+.header img {
+    width: 2rem;
+    margin-bottom: -0.4rem;
+    cursor: pointer;
+}

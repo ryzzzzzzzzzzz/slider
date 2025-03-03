@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import SlideContent from "../SlideContent/SlideContent.jsx";
 import s from "./style.module.css"
 
-const SlideItem = ({ slide, index, goToSecondSlide }) => {
+const SlideItem = ({ slide, index, currentSlide, changeSlide }) => {
     return (
         <div
             className={s.slide}
@@ -11,7 +11,7 @@ const SlideItem = ({ slide, index, goToSecondSlide }) => {
                 backgroundSize: index !== 2 ? 'cover' : '',
             }}
         >
-            <SlideContent slide={slide} index={index} goToSecondSlide={goToSecondSlide}/>
+            <SlideContent slide={slide} index={index} currentSlide={currentSlide} goToSecondSlide={changeSlide}/>
         </div>
     );
 };
@@ -21,14 +21,16 @@ SlideItem.propTypes = {
         bg: PropTypes.string,
     }),
     index: PropTypes.number.isRequired,
-    goToSecondSlide: PropTypes.func
+    currentSlide: PropTypes.number.isRequired,
+    changeSlide: PropTypes.func
 }
 
 SlideItem.defaultProps = {
     slide: PropTypes.shape({
         bg: '',
     }),
-    index: 0
+    index: 0,
+    currentSlide: 0
 }
 
 export default SlideItem
