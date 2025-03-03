@@ -1,3 +1,5 @@
+/*================================= Global ==============================================*/
+
 .first, .second, .third {
     margin-left: 3rem;
     display: flex;
@@ -64,8 +66,11 @@ h2 {
     border-radius: 50%;
     background-color: #242424;
     box-shadow: 0 0 8px rgba(0, 0, 0, 1);
-    /*! тень поменять на градиент*/
 }
+
+/*================================= Global ==============================================*/
+
+/*=============================== First Slide ===========================================*/
 
 .first {
     .btn {
@@ -75,8 +80,11 @@ h2 {
     }
 }
 
-.second {
+/*=============================== First Slide ===========================================*/
 
+/*============================== Second Slide ===========================================*/
+
+.second {
     .large {
         direction: rtl;
         overflow: auto;
@@ -139,6 +147,10 @@ h2 {
     }
 }
 
+/*============================== Second Slide ===========================================*/
+
+/*=============================== Third Slide ===========================================*/
+
 .third {
     flex-direction: row;
 
@@ -187,6 +199,10 @@ h2 {
         top: -2.5rem;
     }
 }
+
+/*=============================== Third Slide ===========================================*/
+
+/*=============================== Modal Slide ===========================================*/
 
 .overlay {
     position: absolute;
@@ -286,11 +302,15 @@ h2 {
     margin: 0 1rem;
 }
 
+/*=============================== Modal Slide ===========================================*/
+
+/*================================ Animation ============================================*/
+
 .pinkSperm {
     width: 40rem;
     position: absolute;
     top: 7.7rem;
-    left: 24rem;
+    right: -6rem;
     z-index: 4;
 }
 
@@ -298,7 +318,7 @@ h2 {
     width: 4rem;
     position: absolute;
     top: 4rem;
-    left: 45rem;
+    right: 8rem;
     animation: bakti1Movement 20s infinite ease-in-out;
 }
 
@@ -319,7 +339,7 @@ h2 {
     z-index: 4;
     position: absolute;
     top: 12rem;
-    left: 50rem;
+    right: 0;
     animation: bakti2Movement 25s infinite linear;
 }
 
@@ -601,3 +621,43 @@ h2 {
         transform: translate(0, 0) scale(1);
     }
 }
+
+/*================================ Animation ============================================*/
+
+/*================================== Media ==============================================*/
+
+@media (max-width: 1023px) {
+    h2 {
+        font-size: 5rem;
+    }
+    .first, .second {
+        margin-left: 2rem;
+        flex-direction: column;
+    }
+    .third {
+        margin: 0 2rem;
+        .small {
+            height: 50%;
+            font-size: 1.2rem;
+        }
+    }
+    .first {
+        .btn {
+            align-self: start;
+            margin-top: 5rem;
+        }
+    }
+    .pinkSperm {
+        right: -16rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .first, .second {
+        margin: 0 auto;
+    }
+    .left li, .right li {
+        margin-bottom: 0;
+    }
+}
+/*================================== Media ==============================================*/

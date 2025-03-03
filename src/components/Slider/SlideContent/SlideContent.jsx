@@ -2,19 +2,9 @@ import PropTypes from 'prop-types';
 import s from "./style.module.css";
 import {useState} from "react";
 import pinkSperm from "../../../data/img/pinkSperm.png"
-import bakti1 from "../../../data/img/bakti/bakti1.png"
-import bakti2 from "../../../data/img/bakti/bakti2.png"
-import bakti3 from "../../../data/img/bakti/bakti3.png"
-import bakti4 from "../../../data/img/bakti/bakti4.png"
 import pinkSpermBlock from "../../../data/img/pinkSpermBlock.png"
-import bubble1 from "../../../data/img/bubbles/bubble1.png"
-import bubble2 from "../../../data/img/bubbles/bubble2.png"
-import bubble3 from "../../../data/img/bubbles/bubble3.png"
-import bubble4 from "../../../data/img/bubbles/bubble4.png"
-import bubble5 from "../../../data/img/bubbles/bubble5.png"
-import bubble6 from "../../../data/img/bubbles/bubble6.png"
-import bubble7 from "../../../data/img/bubbles/bubble7.png"
-import bubble8 from "../../../data/img/bubbles/bubble8.png"
+import * as Bakti from "../../../data/img/bakti/index.js"
+import * as Bubble from "../../../data/img/bubbles/index.js"
 
 
 const SlideContent = ({ slide, index, currentSlide, goToSecondSlide }) => {
@@ -38,10 +28,10 @@ const SlideContent = ({ slide, index, currentSlide, goToSecondSlide }) => {
             {index === 0 &&
                 <div className={s.first}>
                     <img className={s.pinkSperm} src={pinkSperm} alt="pink_sperm"/>
-                    <img className={s.bakti1} src={bakti1} alt="bakti1"/>
-                    <img className={s.bakti2} src={bakti2} alt="bakti2"/>
-                    <img className={s.bakti3} src={bakti3} alt="bakti3"/>
-                    <img className={s.bakti4} src={bakti4} alt="bakti4"/>
+                    <img className={s.bakti1} src={Bakti.bakti1} alt="bakti1"/>
+                    <img className={s.bakti2} src={Bakti.bakti2} alt="bakti2"/>
+                    <img className={s.bakti3} src={Bakti.bakti3} alt="bakti3"/>
+                    <img className={s.bakti4} src={Bakti.bakti4} alt="bakti4"/>
                     <h1>{slide.heading}</h1>
                     <h2>{slide.block}</h2>
                     <button className={s.btn} onClick={() => goToSecondSlide(1)}>
@@ -66,14 +56,14 @@ const SlideContent = ({ slide, index, currentSlide, goToSecondSlide }) => {
                 <div className={isModalSliderOpen ? s.overlay : ''}>
                     <div className={s.third}>
                         <img className={s.bottle} src={slide.bottle} alt="bottle"/>
-                        <img className={s.bubble1} src={bubble1} alt="bubble1"/>
-                        <img className={s.bubble2} src={bubble2} alt="bubble2"/>
-                        <img className={s.bubble3} src={bubble3} alt="bubble3"/>
-                        <img className={s.bubble4} src={bubble4} alt="bubble4"/>
-                        <img className={s.bubble5} src={bubble5} alt="bubble5"/>
-                        <img className={s.bubble6} src={bubble6} alt="bubble6"/>
-                        <img className={s.bubble7} src={bubble7} alt="bubble7"/>
-                        <img className={s.bubble8} src={bubble8} alt="bubble8"/>
+                        <img className={s.bubble1} src={Bubble.bubble1} alt="bubble1"/>
+                        <img className={s.bubble2} src={Bubble.bubble2} alt="bubble2"/>
+                        <img className={s.bubble3} src={Bubble.bubble3} alt="bubble3"/>
+                        <img className={s.bubble4} src={Bubble.bubble4} alt="bubble4"/>
+                        <img className={s.bubble5} src={Bubble.bubble5} alt="bubble5"/>
+                        <img className={s.bubble6} src={Bubble.bubble6} alt="bubble6"/>
+                        <img className={s.bubble7} src={Bubble.bubble7} alt="bubble7"/>
+                        <img className={s.bubble8} src={Bubble.bubble8} alt="bubble8"/>
                         <div>
                             <h1>{isModalSliderOpen ? slide.modal : slide.heading}</h1>
                             <h2>{slide.block}</h2>

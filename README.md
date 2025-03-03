@@ -1,8 +1,31 @@
-# React + Vite
+# React + Vite | Slider
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение-слайдер, разработанное для оптимальной работы на iPad (разрешение 1024x768).
 
-Currently, two official plugins are available:
+## Основные функции
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Навигация между слайдами через горизонтальный свайп
+- Быстрая навигация к первому слайду по клику на иконку домика
+- Оптимизированное отображение для iPad
+
+## Технологии
+
+- React
+- JavaScript
+- Docker для контейнеризации
+- Vite для быстрой сборки
+
+## Запуск проекта
+
+1. Клонирование репозитория
+   ```
+   git clone URL-репозитория
+   ```
+2. Сборка Docker-образа
+   ```
+   docker build -t farm-slider
+   ```
+3. Запуск контейнера
+   ```
+   docker run -p 4173:4173 farm-slider
+   ```

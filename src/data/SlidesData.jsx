@@ -1,20 +1,15 @@
-import bg1 from './img/bg1.png';
-import bg2 from './img/bg2.png';
-import bg3 from './img/bg3.png';
-import bottle from "./img/bottle.png";
-import icon1 from './img/icon1.png';
-import icon2 from './img/icon2.png';
+import * as Images from "./img/index.js"
 
 export const SlidesData = () => {
     return [
         {
-            bg: bg1,
+            bg: Images.bg1,
             heading: 'Привет,',
             block: (<span>Это <b>не</b><br/>коммерческое<br/>задание</span>),
             btn: (<span>Что дальше?</span>)
         },
         {
-            bg: bg2,
+            bg: Images.bg2,
             heading: 'Текст сообщения',
             largeBlock: (
                 <span><b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis ut diam quam nulla, Mauris in aliquam sem fringilla ut morbi tincidunt.
@@ -25,15 +20,15 @@ export const SlidesData = () => {
                 Quis hendrerit dolor magna eget est lorem ipsum. Etiam dignissim diam quis enim. Gravida neque convallis a cras. Ut enim blandit volutpat maecenas volutpat. Mauris sit amet massa vitae tortor rondlimantum larinia nuis vel</span>)
         },
         {
-            bg: bg3,
-            bottle: bottle,
+            bg: Images.bg3,
+            bottle: Images.bottle,
             heading: 'Ключевое сообщение',
             block: (<span>Brend<b>XY</b></span>),
             smallBlock1: (<span>Enicula ipsum a arcu cursus vitae. Eu non diam phasellus vestibulum lorem sed risus ultricies</span>),
             smallBlock2: (<span>A arcu <br/> cursus vitae</span>),
             btn: (<span>Подробнее</span>),
-            icon1: icon1,
-            icon2: icon2,
+            icon1: Images.icon1,
+            icon2: Images.icon2,
             modal: (<span>Преимущества</span>)
         },
     ]
